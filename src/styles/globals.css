@@ -1,0 +1,54 @@
+/* ─── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design system tokens — Dark (default) ────────────────── */
+:root {
+  --bg-primary:     #0A0F1E;
+  --bg-secondary:   #111827;
+  --bg-elevated:    #1F2937;
+  --accent-primary: #6366F1;
+  --accent-aurora1: #06B6D4;
+  --accent-aurora2: #8B5CF6;
+  --text-primary:   #F9FAFB;
+  --text-secondary: #9CA3AF;
+  --border:         #1F2937;
+}
+
+/* ─── Light mode overrides ─────────────────────────────────── */
+.light {
+  --bg-primary:     #F8FAFC;
+  --bg-secondary:   #F1F5F9;
+  --bg-elevated:    #FFFFFF;
+  --accent-primary: #4F46E5;
+  --accent-aurora1: #0891B2;
+  --accent-aurora2: #7C3AED;
+  --text-primary:   #0F172A;
+  --text-secondary: #64748B;
+  --border:         #E2E8F0;
+}
+
+/* ─── Base ─────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Reduced motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
