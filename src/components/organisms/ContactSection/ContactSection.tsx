@@ -32,12 +32,11 @@ export function ContactSection() {
           className="mb-12"
         >
           <h2 id="contact-heading" className="text-3xl md:text-5xl font-bold mb-4">
-            <GradientText animated>Vamos Conversar?</GradientText>
+            <GradientText animated>Let's Talk?</GradientText>
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto text-lg leading-relaxed">
-            Estou ativamente buscando oportunidades no Canadá como Senior Software Engineer
-            ou Tech Lead. Se você está procurando alguém com experiência sólida em mobile e
-            web — vamos conversar!
+            I'm actively seeking opportunities as Senior Software Engineer or Tech Lead.
+            If you're looking for someone with solid experience in mobile and web — let's talk!
           </p>
         </motion.div>
 
@@ -69,7 +68,7 @@ export function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Conecte-se no LinkedIn
+              Connect on LinkedIn
             </Button>
           </motion.div>
         )}

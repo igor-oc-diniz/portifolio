@@ -41,7 +41,7 @@ export function AboutSection() {
               {profile.available && (
                 <div className="absolute -bottom-4 -right-4 flex items-center gap-2 px-4 py-2 rounded-full bg-bg-elevated border border-border text-sm font-medium text-text-secondary shadow-lg">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
-                  Aberto a oportunidades
+                  Open to opportunities
                 </div>
               )}
             </div>
@@ -58,7 +58,7 @@ export function AboutSection() {
               id="about-heading"
               className="text-3xl md:text-4xl font-bold text-text-primary mb-2"
             >
-              Sobre <GradientText>Mim</GradientText>
+              About <GradientText>Me</GradientText>
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-accent-primary to-accent-aurora1 rounded-full mb-6" />
 

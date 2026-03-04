@@ -5,6 +5,7 @@ import { PageLayout } from './components/templates/PageLayout/PageLayout'
 import { SkeletonHero } from './components/templates/Hero/Hero'
 import { SkeletonAbout } from './components/templates/About/About'
 import { SkeletonSkills } from './components/templates/Skills/Skills'
+import { SkeletonExperience } from './components/templates/Experience/Experience'
 import { SkeletonContact } from './components/templates/Contact/Contact'
 
 const Hero = React.lazy(() =>
@@ -17,6 +18,10 @@ const About = React.lazy(() =>
 
 const Skills = React.lazy(() =>
   import('./components/templates/Skills/Skills').then((m) => ({ default: m.Skills }))
+)
+
+const Experience = React.lazy(() =>
+  import('./components/templates/Experience/Experience').then((m) => ({ default: m.Experience }))
 )
 
 const Contact = React.lazy(() =>
@@ -35,6 +40,9 @@ function App() {
         </Suspense>
         <Suspense fallback={<SkeletonSkills />}>
           <Skills />
+        </Suspense>
+        <Suspense fallback={<SkeletonExperience />}>
+          <Experience />
         </Suspense>
         <Suspense fallback={<SkeletonContact />}>
           <Contact />

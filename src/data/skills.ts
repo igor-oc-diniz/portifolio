@@ -16,8 +16,10 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'React', level: 'expert' },
       { name: 'TypeScript', level: 'expert' },
-      { name: 'Tailwind CSS', level: 'advanced' },
+      { name: 'JavaScript', level: 'expert' },
       { name: 'Next.js', level: 'advanced' },
+      { name: 'Styled Components', level: 'advanced' },
+      { name: 'WCAG / Accessibility', level: 'advanced' },
     ],
   },
   {
@@ -27,6 +29,7 @@ export const skillCategories: SkillCategory[] = [
       { name: 'React Native', level: 'expert' },
       { name: 'Flutter', level: 'advanced' },
       { name: 'Expo', level: 'advanced' },
+      { name: 'Redux', level: 'expert' },
     ],
   },
   {
@@ -36,26 +39,29 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Node.js', level: 'advanced' },
       { name: 'Firebase', level: 'advanced' },
       { name: 'REST APIs', level: 'expert' },
+      { name: 'AWS S3', level: 'intermediate' },
     ],
   },
   {
     label: 'Tooling & Ops',
     icon: 'Wrench',
     skills: [
-      { name: 'Git', level: 'expert' },
+      { name: 'Jest', level: 'advanced' },
+      { name: 'Cypress', level: 'advanced' },
+      { name: 'Storybook', level: 'advanced' },
       { name: 'Datadog', level: 'intermediate' },
-      { name: 'CI/CD', level: 'advanced' },
-      { name: 'Vite', level: 'advanced' },
+      { name: 'Git', level: 'expert' },
+      { name: 'Figma', level: 'intermediate' },
     ],
   },
   {
-    label: 'Liderança',
+    label: 'Leadership',
     icon: 'Users',
     skills: [
       { name: 'Tech Lead', level: 'expert' },
       { name: 'Code Review', level: 'expert' },
       { name: 'Mentoring', level: 'advanced' },
-      { name: 'Agile', level: 'expert' },
+      { name: 'Agile / Scrum', level: 'expert' },
     ],
   },
 ]
