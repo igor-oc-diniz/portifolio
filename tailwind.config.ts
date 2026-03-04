@@ -29,6 +29,20 @@ const config: Config = {
       maxWidth: {
         container: '72rem', // max-w-6xl
       },
+      animation: {
+        aurora: 'aurora 8s ease-in-out infinite',
+        'gradient-shift': 'gradient-shift 6s ease-in-out infinite',
+      },
+      keyframes: {
+        aurora: {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+        },
+        'gradient-shift': {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+        },
+      },
     },
   },
   plugins: [],

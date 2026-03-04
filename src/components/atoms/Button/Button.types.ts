@@ -9,5 +9,7 @@ export interface ButtonProps {
   disabled?: boolean
   className?: string
   type?: 'button' | 'submit' | 'reset'
+  target?: string
+  rel?: string
   'aria-label'?: string
 }

@@ -47,6 +47,8 @@ export function Button({
   disabled,
   className,
   type = 'button',
+  target,
+  rel,
   'aria-label': ariaLabel,
 }: ButtonProps) {
   const isDisabled = disabled || loading
@@ -78,6 +80,8 @@ export function Button({
         className={classes}
         aria-label={ariaLabel}
         aria-busy={loading}
+        target={target}
+        rel={rel}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
