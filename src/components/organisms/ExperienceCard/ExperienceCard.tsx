@@ -90,7 +90,7 @@ export function ExperienceCard({ entry, index }: ExperienceCardProps) {
                           className="flex items-start gap-2.5 text-sm text-text-secondary"
                         >
                           <Icon
-                            name="CheckCircle2"
+                            name="CircleCheck"
                             size={16}
                             className="text-accent-primary shrink-0 mt-0.5"
                           />
