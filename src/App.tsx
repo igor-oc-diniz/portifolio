@@ -2,11 +2,12 @@ import React, { Suspense } from 'react'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import { PageLayout } from './components/templates/PageLayout/PageLayout'
-import { SkeletonHero } from './components/templates/Hero/Hero'
-import { SkeletonAbout } from './components/templates/About/About'
-import { SkeletonSkills } from './components/templates/Skills/Skills'
+import { SkeletonHero }       from './components/templates/Hero/Hero'
+import { SkeletonAbout }      from './components/templates/About/About'
+import { SkeletonSkills }     from './components/templates/Skills/Skills'
 import { SkeletonExperience } from './components/templates/Experience/Experience'
-import { SkeletonContact } from './components/templates/Contact/Contact'
+import { SkeletonTerminal }   from './components/templates/TerminalSection/TerminalSection'
+import { SkeletonContact }    from './components/templates/Contact/Contact'
 
 const Hero = React.lazy(() =>
   import('./components/templates/Hero/Hero').then((m) => ({ default: m.Hero }))
@@ -22,6 +23,12 @@ const Skills = React.lazy(() =>
 
 const Experience = React.lazy(() =>
   import('./components/templates/Experience/Experience').then((m) => ({ default: m.Experience }))
+)
+
+const TerminalSection = React.lazy(() =>
+  import('./components/templates/TerminalSection/TerminalSection').then((m) => ({
+    default: m.TerminalSection,
+  }))
 )
 
 const Contact = React.lazy(() =>
@@ -43,6 +50,9 @@ function App() {
         </Suspense>
         <Suspense fallback={<SkeletonExperience />}>
           <Experience />
+        </Suspense>
+        <Suspense fallback={<SkeletonTerminal />}>
+          <TerminalSection />
         </Suspense>
         <Suspense fallback={<SkeletonContact />}>
           <Contact />

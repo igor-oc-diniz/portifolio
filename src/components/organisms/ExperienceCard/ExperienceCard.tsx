@@ -8,6 +8,28 @@ import { useExpandable } from "../../../hooks/useExpandable";
 import { cn } from "../../../lib/utils";
 import type { ExperienceEntry } from "../../../data/experience";
 
+const URL_RE = /(https?:\/\/[^\s]+|www\.[^\s]+)/g;
+
+function linkify(text: string) {
+  // split() with a capturing group includes the captured parts at odd indices
+  return text.split(URL_RE).map((part, i) =>
+    i % 2 === 1 ? (
+      <a
+        key={i}
+        href={part.startsWith("http") ? part : `https://${part}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-accent-primary hover:underline"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {part}
+      </a>
+    ) : (
+      part
+    ),
+  );
+}
+
 interface ExperienceCardProps {
   entry: ExperienceEntry;
   index: number;
@@ -65,12 +87,12 @@ export function ExperienceCard({ entry, index }: ExperienceCardProps) {
                 <div className="px-5 pb-6 space-y-6 border-t border-border/60">
                   {/* Description */}
                   <div className="pt-4 space-y-2">
-                    {entry.description.map((para, i) => (
+                    {entry.description.map((description, i) => (
                       <p
                         key={i}
                         className="text-sm text-text-secondary leading-relaxed"
                       >
-                        {para}
+                        {linkify(description)}
                       </p>
                     ))}
                   </div>

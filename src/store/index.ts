@@ -3,6 +3,7 @@ import themeReducer from './slices/themeSlice'
 import uiReducer from './slices/uiSlice'
 import menuReducer from './slices/menuSlice'
 import experienceReducer from './slices/experienceSlice'
+import terminalReducer from './slices/terminalSlice'
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     ui: uiReducer,
     menu: menuReducer,
     experience: experienceReducer,
+    terminal: terminalReducer,
   },
 })
 
