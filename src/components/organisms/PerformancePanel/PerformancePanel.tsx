@@ -31,12 +31,12 @@ export function PerformancePanel() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Auto-minimize on mobile
   useEffect(() => {
     if (isMobile && isPanelOpen && !isMinimized) {
       dispatch(minimizePanel());
     }
-  }, [isMobile, isPanelOpen, isMinimized, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMobile, isPanelOpen]);
 
   return (
     <div className="fixed bottom-6 left-6 z-50 w-56 md:w-64">
