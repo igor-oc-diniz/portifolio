@@ -1,3 +1,5 @@
+import type { LucideIconName } from "../components/atoms/Icon/Icon";
+
 export interface Skill {
   name: string;
   level?: "expert" | "advanced" | "intermediate";
@@ -5,7 +7,7 @@ export interface Skill {
 
 export interface SkillCategory {
   label: string;
-  icon: string;
+  icon: LucideIconName;
   skills: Skill[];
 }
 
@@ -29,7 +31,8 @@ export const skillCategories: SkillCategory[] = [
       { name: "React Native", level: "expert" },
       { name: "Flutter", level: "advanced" },
       { name: "Expo", level: "advanced" },
-      { name: "Redux", level: "expert" },
+      { name: "Push Notifications", level: "advanced" },
+      { name: "App Store / Play Store Deploy", level: "advanced" },
     ],
   },
   {
@@ -39,7 +42,9 @@ export const skillCategories: SkillCategory[] = [
       { name: "Node.js", level: "advanced" },
       { name: "Firebase", level: "advanced" },
       { name: "REST APIs", level: "expert" },
-      { name: "AWS S3", level: "intermediate" },
+      { name: "AWS S3", level: "advanced" },
+      { name: "Spring Boot", level: "intermediate" },
+      { name: "PostgreSQL", level: "advanced" },
     ],
   },
   {
@@ -48,6 +53,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Jest", level: "advanced" },
       { name: "Cypress", level: "advanced" },
+      { name: "ESLint / Prettier", level: "advanced" },
       { name: "Storybook", level: "advanced" },
       { name: "Datadog", level: "intermediate" },
       { name: "Git", level: "expert" },
@@ -62,6 +68,17 @@ export const skillCategories: SkillCategory[] = [
       { name: "Code Review", level: "expert" },
       { name: "Mentoring", level: "advanced" },
       { name: "Agile / Scrum", level: "expert" },
+    ],
+  },
+  {
+    label: "Architecture",
+    icon: "Boxes",
+    skills: [
+      { name: "Atomic Design", level: "expert" },
+      { name: "Microfrontends", level: "advanced" },
+      { name: "Monorepo", level: "advanced" },
+      { name: "Design System", level: "advanced" },
+      { name: "Clean Architecture", level: "intermediate" },
     ],
   },
 ];

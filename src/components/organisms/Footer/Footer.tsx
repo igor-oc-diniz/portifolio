@@ -18,7 +18,7 @@ export function Footer() {
     <footer className="border-t border-border bg-bg-secondary">
       <div className="max-w-container mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-text-secondary text-center sm:text-left">
-          Built with React &amp; ☕ by Igor Otávio Caetano Diniz · 2025
+          Built with React &amp; ☕ by Igor Otávio Caetano Diniz · 2026
         </p>
         <div className="flex items-center gap-6">
           {SOCIAL_LINKS.map((link) => (
