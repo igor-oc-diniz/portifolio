@@ -6,24 +6,24 @@ export interface QuickFact {
 }
 
 export const profile = {
-  name: 'Igor Otávio Cetano Diniz',
-  greeting: 'Olá, eu sou',
+  name: 'Igor Otávio Caetano Diniz',
+  greeting: "Hi, I'm",
   titles: [
-    'Senior Software Engineer',
+    'Senior Frontend Engineer',
     'Tech Lead',
     'React Specialist',
-    'Flutter Developer',
+    'React Native Developer',
     'Mobile Engineer',
   ],
   bio: [
-    'Engenheiro de software com 7+ anos construindo produtos digitais de alto impacto. Especializado em aplicações mobile e web com React Native, Flutter e React.',
-    'Atualmente em transição para o Canadá, buscando oportunidades onde possa combinar liderança técnica com desenvolvimento de produtos que fazem a diferença.',
+    'Software engineer with 7+ years delivering production-grade applications in React, React Native, and Flutter — across banking, healthcare, and B2B sectors.',
+    'Based in Brazil, actively seeking opportunities as Senior Software Engineer or Tech Lead to combine technical leadership with products that make a real difference.',
   ],
-  location: 'Canada 🍁',
+  location: 'Brazil 🇧🇷',
   available: true,
   quickFacts: [
-    { icon: 'MapPin' as LucideIconName,      label: 'Canada (relocating)' },
-    { icon: 'Briefcase' as LucideIconName,   label: '7+ anos de experiência' },
+    { icon: 'MapPin' as LucideIconName,      label: 'Belo Horizonte, Brazil' },
+    { icon: 'Briefcase' as LucideIconName,   label: '7+ years of experience' },
     { icon: 'Users' as LucideIconName,       label: 'Tech Lead' },
     { icon: 'Smartphone' as LucideIconName,  label: 'React Native & Flutter' },
   ] satisfies QuickFact[],

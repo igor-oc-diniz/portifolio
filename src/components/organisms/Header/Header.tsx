@@ -13,7 +13,7 @@ const NAV_ITEMS = [
   { href: '#about',      label: 'About' },
   { href: '#skills',     label: 'Skills' },
   { href: '#experience', label: 'Experience' },
-  { href: '#projects',   label: 'Projects' },
+  { href: '#terminal',   label: 'Terminal' },
   { href: '#contact',    label: 'Contact' },
 ]
 

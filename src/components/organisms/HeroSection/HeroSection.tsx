@@ -99,10 +99,10 @@ export function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
         >
           <Button variant="primary" size="lg" href="#contact">
-            Entre em Contato
+            Get in Touch
           </Button>
           <Button variant="outline" size="lg" href="#experience">
-            Ver Experiência
+            View Experience
           </Button>
         </motion.div>
 

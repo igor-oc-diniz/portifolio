@@ -22,11 +22,11 @@ export function SkillsSection() {
             id="skills-heading"
             className="text-3xl md:text-4xl font-bold text-text-primary mb-2"
           >
-            <GradientText>Skills</GradientText> &amp; Tecnologias
+            <GradientText>Skills</GradientText> &amp; Technologies
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-accent-primary to-accent-aurora1 rounded-full mx-auto mt-2 mb-4" />
           <p className="text-text-secondary max-w-xl mx-auto">
-            Stack técnica que uso para criar produtos digitais de alto impacto.
+            My tech stack for building high-impact digital products.
           </p>
         </motion.div>
 
