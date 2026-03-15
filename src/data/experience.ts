@@ -1,19 +1,22 @@
+import type { LucideIconName } from "../components/atoms/Icon/Icon";
+
 export interface Metric {
   label: string;
   value: string;
-  icon?: string;
+  icon?: LucideIconName;
 }
 
 export interface ExperienceEntry {
   id: string;
   company: string;
+  logo?: string;
   role: string;
   period: string;
   duration: string;
   location: string;
   sector: string;
   description: string[];
-  achievements: string[];
+  activities: string[];
   metrics: Metric[];
   stack: string[];
   tags: FilterTag[];
@@ -32,6 +35,7 @@ export const experiences: ExperienceEntry[] = [
   {
     id: "cit-senior",
     company: "CI&T",
+    logo: "./cit.png",
     role: "Senior Frontend Developer",
     period: "Jun 2025 – Present",
     duration: "8 months",
@@ -42,17 +46,17 @@ export const experiences: ExperienceEntry[] = [
     description: [
       "Allocated to Itaú, one of Brazil's largest banks, to lead the frontend foundation of a new large-scale digital banking product — defining architecture standards for accessibility, scalability, and complex user journeys in a highly regulated environment.",
     ],
-    achievements: [
+    activities: [
       "Designed and implemented all screens for the new digital banking user journey",
-      "Achieved 100% WCAG compliance across 12 accessible interfaces for iOS and Android",
-      "Maintained unit test coverage above 95%, ensuring high reliability and long-term maintainability",
       "Integrated all user flows with Datadog for detailed behavior tracking and performance monitoring",
       "Collaborated closely with QA to support integration and end-to-end testing",
+      "Actively participated in task refinement and technical discussions across both frontend and backend scopes",
+      "Supported others teams to develop solutions with React",
     ],
     metrics: [
       { label: "Test coverage", value: "95%+", icon: "ShieldCheck" },
       { label: "WCAG compliance", value: "100%", icon: "Eye" },
-      { label: "Accessible interfaces", value: "12", icon: "Layout" },
+      { label: "Accessible interfaces", value: "12", icon: "PanelsTopLeft" },
     ],
     stack: [
       "React",
@@ -70,19 +74,22 @@ export const experiences: ExperienceEntry[] = [
   {
     id: "topcaixa",
     company: "TopCaixa",
+    logo: "./topcaixa.png",
     role: "Co-Founder & Mobile Engineer",
-    period: "2019 – Present",
+    period: "2022 – Present",
     duration: "Ongoing",
     highlight: true,
     location: "Remote",
     sector: "Startup · SaaS",
-    tags: ["Mobile", "Frontend", "Leadership"],
+    tags: ["Mobile", "Leadership"],
     description: [
       "Co-founding member with full ownership of the mobile application — responsible for all architecture decisions, product design, and feature delivery from the ground up.\nFeel free to check-out our product available for android: www.topcaixa.com.br",
     ],
-    achievements: [
+    activities: [
       "Built the entire mobile application from scratch, including architecture, navigation, and UI",
       "Sole responsible for all frontend product decisions and continuous delivery",
+      "Managed the deployment into the Google Play Store",
+      "Responsible for the entire product road map",
     ],
     metrics: [
       { label: "Active users", value: "83.3%", icon: "Users" },
@@ -93,6 +100,7 @@ export const experiences: ExperienceEntry[] = [
   {
     id: "encora-velocity",
     company: "Encora",
+    logo: "./encora.png",
     role: "Frontend Developer",
     period: "Jun 2024 – Jun 2025",
     duration: "1 year",
@@ -102,11 +110,16 @@ export const experiences: ExperienceEntry[] = [
     description: [
       "Allocated to Velocity Global, a workforce management platform, to develop a React + TypeScript application for invoice management and data visualization, focusing on accessibility, performance, and scalable UI architecture.",
     ],
-    achievements: [
-      "Improved invoice batch download performance by 68% by orchestrating asynchronous requests",
-      "Resolved 56 of 64 accessibility issues (87%) across the main user journey by applying WCAG guidelines",
-      "Built a library of 6 reusable documented Storybook components, adopted by 7 teams across the organization",
-      "Implemented cost comparison and pricing features to increase transparency for end users",
+    activities: [
+      "Developed and maintained a React + TypeScript web application for invoice management and data visualization",
+      "Implemented responsive layouts to ensure consistent behavior across multiple devices and screen sizes",
+      "Identified and addressed accessibility issues across core user journeys, following WCAG guidelines",
+      "Designed and built reusable, documented UI components using Storybook to improve consistency and reuse across teams",
+      "Optimized asynchronous operations and batch processing to improve performance and reliability",
+      "Implemented cost comparison and pricing-related features to increase transparency for end users",
+      "Integrated frontend features with backend services built on Node.js and AWS S3",
+      "Wrote and maintained unit and end-to-end tests using Jest and Cypress",
+      "Collaborated with product, design, backend, and QA teams in an Agile environment",
     ],
     metrics: [
       { label: "Download performance", value: "+68%", icon: "Zap" },
@@ -128,20 +141,22 @@ export const experiences: ExperienceEntry[] = [
   {
     id: "encora-mindbloom",
     company: "Encora",
+    logo: "./encora.png",
     role: "Frontend Developer",
     period: "Jun 2023 – Jun 2024",
     duration: "1 year",
     location: "Remote",
     sector: "Healthcare · Mobile",
-    tags: ["Mobile", "Frontend"],
+    tags: ["Mobile"],
     description: [
       "Allocated to Mindbloom, a mental health company, to develop a mobile application helping patients schedule consultations with psychiatrists and therapists, with a strong focus on reliability, privacy, and user trust.",
     ],
-    achievements: [
-      "Improved patient adherence by 30% measured by therapy attendance rates using push notifications",
-      "Reduced QA-reported tickets by ~50% by improving backlog refinement and Scrum ceremonies",
-      "Introduced Redux for centralized state management, reducing complexity and enabling faster onboarding",
-      "Supported therapy sessions through an internal media player, ensuring stability and smooth playback",
+    activities: [
+      "Developed and maintained features for a healthcare mobile application focused on mental health treatment",
+      "Implemented scheduling flows for psychiatric and therapy consultations",
+      "Introduced Redux for state management to improve scalability, predictability, and long-term maintainability",
+      "Implemented push notifications to remind patients about therapy sessions and medication schedules",
+      "Collaborated with product, design, and backend teams to ensure compliance with healthcare-related requirements",
     ],
     metrics: [
       { label: "Patient adherence", value: "+30%", icon: "TrendingUp" },
@@ -160,6 +175,7 @@ export const experiences: ExperienceEntry[] = [
   {
     id: "dti-lead",
     company: "dti digital",
+    logo: "./dti.png",
     role: "Tech Lead",
     period: "Oct 2021 – Jun 2023",
     duration: "2 year 8 months",
@@ -169,18 +185,19 @@ export const experiences: ExperienceEntry[] = [
     description: [
       "Led end-to-end development of a B2B offline-first mobile app for sales representatives in low-connectivity environments, combining hands-on engineering with technical leadership.",
     ],
-    achievements: [
-      "Generated BRL 2.7M in revenue in the first month after launch, with results published internally by stakeholders",
-      "Reduced customer support requests by 68% by redesigning critical UI/UX flows based on user behavior analysis",
-      "Improved app loading time by 54% by refactoring the mobile architecture and optimizing critical rendering flows",
-      "Enabled offline operations for ~20% of sales reps in remote areas via SQLite + Firebase sync, eliminating connectivity as a blocker",
-      "Eliminated sprint carry-overs through mentoring on best practices, achieving 100% sprint completion consistently",
+    activities: [
+      "Led development of a B2B offline-first mobile app using React Native",
+      "Built backend services with Node.js and Firebase",
+      "Implemented PM2 for service management and log monitoring, improving application observability and stability.",
+      "Implemented offline sync, background processing, and conflict resolution",
+      "Led code reviews, mentored engineers, and promoted best practices",
+      "Participated in backlog refinement and Agile/Scrum ceremonies",
     ],
     metrics: [
       { label: "Revenue at launch", value: "R$2.7M", icon: "TrendingUp" },
       { label: "Support reduction", value: "−68%", icon: "MessageCircle" },
       { label: "App performance", value: "+54%", icon: "Zap" },
-      { label: "Sprint completion", value: "100%", icon: "CheckCircle" },
+      { label: "Sprint completion", value: "100%", icon: "CircleCheckBig" },
     ],
     stack: [
       "React Native",
@@ -195,6 +212,7 @@ export const experiences: ExperienceEntry[] = [
   {
     id: "dti-junior",
     company: "dti digital",
+    logo: "./dti.png",
     role: "Junior Software Engineer",
     period: "Oct 2020 – Oct 2021",
     duration: "1 year",
@@ -204,10 +222,14 @@ export const experiences: ExperienceEntry[] = [
     description: [
       "Allocated to Tribanco, a regulated financial institution in Uberlândia, contributing to the development and modernization of mobile and web systems under strict regulatory constraints.",
     ],
-    achievements: [
-      "Achieved 100% BACEN regulatory compliance by implementing XML-based financial messaging integrations",
-      "Reduced initial invoice loading time by 50%+ through a two-phase async endpoint strategy",
-      "Resolved critical React Native production issues, ensuring continuity of financial services for end users",
+    activities: [
+      "Built and maintained React Native applications using Redux and REST APIs",
+      "Integrated banking systems with BACEN using XML-based data models",
+      "Designed and optimized relational databases with MySQL and Oracle Database",
+      "Developed backend services using Node.js and AWS, focusing on security and scalability",
+      "Identified and resolved performance bottlenecks across mobile and web systems",
+      "Implemented monitoring and observability using Datadog",
+      "Collaborated with product, backend, and QA teams within Agile/Scrum workflows",
     ],
     metrics: [
       { label: "BACEN compliance", value: "100%", icon: "ShieldCheck" },
@@ -223,5 +245,73 @@ export const experiences: ExperienceEntry[] = [
       "Datadog",
       "XML",
     ],
+  },
+  {
+    id: "ufla-intern",
+    company: "UFLA",
+    logo: "./ufla.png",
+    role: "Mobile Engineer",
+    period: "Oct 2019 - Apr 2020",
+    duration: "7 months",
+    location: "Lavras",
+    sector: "Logistics · Research",
+    description: [
+      "Developed an internal mobile application for the Federal University of Lavras to enable students to track campus shuttle buses in real time, view routes, and follow schedules with low-latency performance optimization focused on reliability and usability.",
+    ],
+    activities: [
+      "Developed and maintained mobile applications using both native (Java) and cross-platform (Flutter) technologies",
+      "Integrated mobile clients with backend systems through RESTful APIs",
+      "Implemented real-time communication using MQTT to support live shuttle location tracking",
+      "Designed and managed relational data models using MySQL to ensure data integrity and performance",
+      "Built responsive and scalable UI components in Flutter following Material Design guidelines",
+      "Performed testing, debugging, and performance tuning to improve stability and user experience",
+    ],
+    metrics: [
+      { label: "Low latency", value: "40ms", icon: "Timer" },
+      { label: "Smart server uptime", value: "80%" },
+    ],
+    stack: ["Flutter", "Java", "MQTT", "MySQL", "REST APIs", "Material Design"],
+    tags: ["Mobile"],
+  },
+  {
+    id: "technolog-intern",
+    company: "Technolog",
+    logo: "./technolog.png",
+    role: "Frontend Developer",
+    period: "Mar 2018 - Nov 2018",
+    duration: "9 months",
+    location: "Lavras",
+    sector: "Logistics · SaaS",
+    description: [
+      "At Technolog, a logistics company serving multiple enterprise clients, I worked on the development and maintenance of mobile and web applications supporting operational workflows and data management. The role spanned native Android, web front-end, and backend integration, with a strong focus on performance, usability, and system reliability.",
+    ],
+    activities: [
+      "Built and maintained native Android applications using Java and XML, focusing on performance and user experience",
+      "Developed and improved web interfaces using HTML, CSS, and JavaScript",
+      "Designed and implemented CRUD operations for internal and external systems",
+      "Integrated mobile and web applications with backend services and databases",
+      "Managed relational databases using MySQL and SQL Server",
+      "Optimized application performance and usability across platforms",
+      "Collaborated with multidisciplinary teams to deliver solutions aligned with client needs",
+    ],
+    metrics: [
+      { label: "User adoption", value: "80%", icon: "Users" },
+      {
+        label: "Response time decreased",
+        value: "33,3%",
+        icon: "TrendingDown",
+      },
+    ],
+    stack: [
+      "Java",
+      "Android (Native)",
+      "XML",
+      "HTML, CSS, JavaScript",
+      "MySQL",
+      "SQL Server",
+      "PHP",
+      "Bootstrap",
+    ],
+    tags: ["Mobile", "Frontend"],
   },
 ];

@@ -1,15 +1,19 @@
-import { motion } from 'framer-motion'
-import { Icon } from '../../atoms/Icon/Icon'
-import { CompanyLogo } from '../../atoms/CompanyLogo/CompanyLogo'
-import type { ExperienceEntry } from '../../../data/experience'
+import { motion } from "framer-motion";
+import { Icon } from "../../atoms/Icon/Icon";
+import { CompanyLogo } from "../../atoms/CompanyLogo/CompanyLogo";
+import type { ExperienceEntry } from "../../../data/experience";
 
 interface ExperienceHeaderProps {
-  entry: ExperienceEntry
-  isOpen: boolean
-  onToggle: () => void
+  entry: ExperienceEntry;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-export function ExperienceHeader({ entry, isOpen, onToggle }: ExperienceHeaderProps) {
+export function ExperienceHeader({
+  entry,
+  isOpen,
+  onToggle,
+}: ExperienceHeaderProps) {
   return (
     <div
       role="button"
@@ -18,14 +22,14 @@ export function ExperienceHeader({ entry, isOpen, onToggle }: ExperienceHeaderPr
       tabIndex={0}
       onClick={onToggle}
       onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault()
-          onToggle()
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onToggle();
         }
       }}
       className="flex items-start gap-4 p-5 cursor-pointer hover:bg-bg-secondary/40 transition-colors rounded-t-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-inset"
     >
-      <CompanyLogo name={entry.company} />
+      <CompanyLogo name={entry.company} src={entry.logo} />
 
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-3">
@@ -34,7 +38,9 @@ export function ExperienceHeader({ entry, isOpen, onToggle }: ExperienceHeaderPr
               {entry.role}
             </p>
             <p className="text-sm mt-0.5">
-              <span className="text-accent-primary font-medium">{entry.company}</span>
+              <span className="text-accent-primary font-medium">
+                {entry.company}
+              </span>
               <span className="text-text-secondary"> · {entry.sector}</span>
             </p>
             <p className="text-xs text-text-secondary mt-1 leading-relaxed">
@@ -52,11 +58,15 @@ export function ExperienceHeader({ entry, isOpen, onToggle }: ExperienceHeaderPr
               animate={{ rotate: isOpen ? 180 : 0 }}
               transition={{ duration: 0.25 }}
             >
-              <Icon name="ChevronDown" size={18} className="text-text-secondary" />
+              <Icon
+                name="ChevronDown"
+                size={18}
+                className="text-text-secondary"
+              />
             </motion.div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

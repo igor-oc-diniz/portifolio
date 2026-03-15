@@ -5,6 +5,8 @@ import { ExperienceHeader } from "../../molecules/ExperienceHeader/ExperienceHea
 import { ExperienceMetrics } from "../../molecules/ExperienceMetrics/ExperienceMetrics";
 import { ExperienceStack } from "../../molecules/ExperienceStack/ExperienceStack";
 import { useExpandable } from "../../../hooks/useExpandable";
+import { useAppSelector } from "../../../store/hooks";
+import { selectIsRecruiterActive } from "../../../store/slices/recruiterSlice";
 import { cn } from "../../../lib/utils";
 import type { ExperienceEntry } from "../../../data/experience";
 
@@ -37,6 +39,8 @@ interface ExperienceCardProps {
 
 export function ExperienceCard({ entry, index }: ExperienceCardProps) {
   const { isOpen, toggle } = useExpandable(entry.id);
+  const isRecruiterActive = useAppSelector(selectIsRecruiterActive);
+  const expanded = isOpen || isRecruiterActive;
 
   const reducedMotion =
     typeof window !== "undefined"
@@ -62,16 +66,18 @@ export function ExperienceCard({ entry, index }: ExperienceCardProps) {
         <div
           className={cn(
             "rounded-xl border backdrop-blur-sm bg-bg-elevated/50 overflow-hidden",
-            entry.highlight
-              ? "border-accent-primary/40 shadow-lg shadow-accent-primary/10"
+            entry.highlight || isRecruiterActive
+              ? isRecruiterActive
+                ? "border-accent-primary/60 shadow-lg shadow-accent-primary/15"
+                : "border-accent-primary/40 shadow-lg shadow-accent-primary/10"
               : "border-border hover:border-border",
           )}
         >
-          <ExperienceHeader entry={entry} isOpen={isOpen} onToggle={toggle} />
+          <ExperienceHeader entry={entry} isOpen={expanded} onToggle={toggle} />
 
           {/* Expandable body */}
           <AnimatePresence initial={false}>
-            {isOpen && (
+            {expanded && (
               <motion.div
                 id={`experience-body-${entry.id}`}
                 key="body"
@@ -100,13 +106,13 @@ export function ExperienceCard({ entry, index }: ExperienceCardProps) {
                   {/* Metrics */}
                   <ExperienceMetrics metrics={entry.metrics} />
 
-                  {/* Achievements */}
+                  {/* Activities */}
                   <div>
                     <p className="text-xs text-text-secondary uppercase tracking-wider font-medium mb-3">
-                      Achievements
+                      Activities
                     </p>
                     <ul className="space-y-2">
-                      {entry.achievements.map((achievement, i) => (
+                      {entry.activities.map((activity, i) => (
                         <li
                           key={i}
                           className="flex items-start gap-2.5 text-sm text-text-secondary"
@@ -116,7 +122,7 @@ export function ExperienceCard({ entry, index }: ExperienceCardProps) {
                             size={16}
                             className="text-accent-primary shrink-0 mt-0.5"
                           />
-                          <span className="leading-relaxed">{achievement}</span>
+                          <span className="leading-relaxed">{activity}</span>
                         </li>
                       ))}
                     </ul>
