@@ -7,6 +7,7 @@ import { RecruiterToggle }  from './components/molecules/RecruiterToggle/Recruit
 import { PerformancePanel } from './components/organisms/PerformancePanel/PerformancePanel'
 import { ModeIndicator }    from './components/atoms/ModeIndicator/ModeIndicator'
 import { usePerformanceMetrics } from './hooks/usePerformanceMetrics'
+import { ParticleField } from './components/atoms/ParticleField/ParticleField'
 
 import { SkeletonHero }       from './components/templates/Hero/Hero'
 import { SkeletonAbout }      from './components/templates/About/About'
@@ -42,6 +43,7 @@ function AppInner() {
 
   return (
     <>
+      <ParticleField />
       <PageLayout>
         <PageOrchestrator
           sections={{
