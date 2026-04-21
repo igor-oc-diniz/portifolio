@@ -5,6 +5,7 @@ import { useAppSelector } from "../../../store/hooks";
 import { selectIsRecruiterActive } from "../../../store/slices/recruiterSlice";
 import { RecruiterBanner } from "../../organisms/RecruiterBanner/RecruiterBanner";
 import type { SectionId } from "../../../store/slices/recruiterSlice";
+import { SectionReveal } from "../../molecules/SectionReveal/SectionReveal";
 
 // ─── PageOrchestrator ─────────────────────────────────────────────────────────
 // Controls section rendering order based on the active mode (default / recruiter).
@@ -53,7 +54,7 @@ export function PageOrchestrator({ sections }: PageOrchestratorProps) {
       {/* Sections in dynamic order */}
       {order.map((id) => (
         <motion.div key={id} layoutId={id} layout transition={TRANSITION}>
-          {sections[id]}
+          {id === 'hero' ? sections[id] : <SectionReveal>{sections[id]}</SectionReveal>}
         </motion.div>
       ))}
     </LayoutGroup>
