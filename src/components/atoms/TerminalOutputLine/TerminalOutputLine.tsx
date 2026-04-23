@@ -19,7 +19,20 @@ const TYPE_CLASS: Record<string, string> = {
   jsx:       'text-[#C9D1D9]',
 }
 
+function parseBold(text: string): ReactNode[] {
+  const parts = text.split(/\*\*(.+?)\*\*/g)
+  return parts.map((part, i) =>
+    i % 2 === 1
+      ? <strong key={i} className="text-[#79C0FF] font-semibold">{part}</strong>
+      : part,
+  )
+}
+
 export function TerminalOutputLine({ line }: TerminalOutputLineProps) {
+  const content = typeof line.content === 'string'
+    ? parseBold(line.content)
+    : line.content as ReactNode
+
   return (
     <div
       className={cn(
@@ -27,7 +40,7 @@ export function TerminalOutputLine({ line }: TerminalOutputLineProps) {
         TYPE_CLASS[line.type] ?? 'text-[#C9D1D9]',
       )}
     >
-      {line.content as ReactNode}
+      {content}
     </div>
   )
 }

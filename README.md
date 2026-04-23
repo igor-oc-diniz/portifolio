@@ -24,6 +24,7 @@
 |---|---|
 | 🌗 **Dark / Light Theme** | CSS-variable-based design tokens, toggled via Redux — no flash on load |
 | 🖥️ **Interactive Terminal** | Fully functional in-browser CLI with command history and typewriter output |
+| 🤖 **AI Chat** | Powered by Claude (Anthropic) via Cloudflare Worker — answers questions about my background, experience, and skills in real time |
 | 👔 **Recruiter Mode** | Dedicated view that surfaces key career metrics and highlights at a glance |
 | 📊 **Performance Panel** | Real-time render metrics collected via `usePerformanceMetrics` hook |
 | 🎞️ **Framer Motion Animations** | Scroll-triggered reveals, aurora gradient backgrounds, parallax layers |
@@ -88,6 +89,7 @@ performanceSlice → FPS, render time, paint metrics
 | **Icons** | Lucide React |
 | **Utilities** | clsx, tailwind-merge |
 | **Deploy** | GitHub Pages via `gh-pages` |
+| **AI Backend** | Cloudflare Workers + Anthropic Claude API |
 
 ---
 
@@ -172,6 +174,7 @@ Custom Tailwind animations:
 | **Skills** | `SkillsSection` | Grouped skill badges by category |
 | **Experience** | `ExperienceSection` | Interactive career timeline (7 roles, 2018–present) |
 | **Terminal** | `TerminalSection` | In-browser CLI — type `help` to get started |
+| **AI Chat** | `AIChatSection` | Ask anything about my career, skills, and experience — powered by Claude |
 | **Contact** | `ContactSection` | Links to email, LinkedIn, and GitHub |
 
 ---
@@ -191,6 +194,18 @@ clear       → clear the terminal
 
 ---
 
+## 🤖 AI Chat
+
+The portfolio includes an AI-powered chat that answers questions about my background, skills, and career in real time.
+
+- **Model:** Claude (Anthropic)
+- **Backend:** Cloudflare Worker — acts as a secure proxy between the frontend and the Anthropic API
+- **Context:** The worker is pre-loaded with my full profile so Claude can answer questions like *"What's Igor's experience with React Native?"* or *"Has he worked in the financial sector?"*
+
+The worker source lives in the [`worker/`](worker/) directory.
+
+---
+
 ## 📋 Roadmap
 
 - [x] Phase 1 — Design system & foundation
@@ -198,7 +213,7 @@ clear       → clear the terminal
 - [x] Phase 3 — Interactive career timeline (Experience)
 - [x] Phase 4 — Interactive terminal (CLI)
 - [x] Phase 5 — Recruiter Mode & Performance Panel
-- [ ] Phase 6 — AI chat integration
+- [x] Phase 6 — AI chat integration (Claude via Cloudflare Worker)
 
 ---
 
