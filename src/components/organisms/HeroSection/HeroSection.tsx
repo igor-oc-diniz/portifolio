@@ -4,7 +4,6 @@ import { Button } from "../../atoms/Button/Button";
 import { GradientText } from "../../atoms/GradientText/GradientText";
 import { Icon } from "../../atoms/Icon/Icon";
 import { TypewriterText } from "../../molecules/TypewriterText/TypewriterText";
-import { ParallaxLayer } from "../../molecules/ParallaxLayer/ParallaxLayer";
 import { profile } from "../../../data/profile";
 
 const containerVariants: Variants = {
@@ -25,43 +24,6 @@ export function HeroSection() {
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* Aurora gradient background */}
-      <div
-        className="absolute inset-0 -z-10 opacity-[0.08] dark:opacity-[0.15] animate-aurora bg-gradient-to-br from-accent-primary via-accent-aurora1 to-accent-aurora2"
-        style={{ backgroundSize: "400% 400%" }}
-        aria-hidden="true"
-      />
-
-      {/* Parallax blobs */}
-      <ParallaxLayer
-        speed={0.15}
-        className="absolute top-1/4 left-1/4 -z-10 pointer-events-none"
-      >
-        <div
-          className="w-72 h-72 rounded-full bg-accent-primary/20 blur-3xl"
-          aria-hidden="true"
-        />
-      </ParallaxLayer>
-
-      <ParallaxLayer
-        speed={0.25}
-        className="absolute bottom-1/3 right-1/4 -z-10 pointer-events-none"
-      >
-        <div
-          className="w-96 h-96 rounded-full bg-accent-aurora1/15 blur-3xl"
-          aria-hidden="true"
-        />
-      </ParallaxLayer>
-
-      <ParallaxLayer
-        speed={0.35}
-        className="absolute top-1/3 right-1/3 -z-10 pointer-events-none"
-      >
-        <div
-          className="w-52 h-52 rounded-full bg-accent-aurora2/20 blur-3xl"
-          aria-hidden="true"
-        />
-      </ParallaxLayer>
 
       {/* Content */}
       <motion.div
