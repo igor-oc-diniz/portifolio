@@ -12,6 +12,7 @@ import { findCommand, getEasterEggOutput, commands } from '../data/commands'
 import type { OutputLine } from '../data/commands'
 import { useCommandHistory }    from './useCommandHistory'
 import { useTypewriterOutput }  from './useTypewriterOutput'
+import { useAIChat }            from './useAIChat'
 
 // ─── Easter-egg triggers ──────────────────────────────────────────────────────
 
@@ -45,6 +46,7 @@ export function useTerminal() {
 
   const cmdHistory = useCommandHistory()
   const { animate, cancel } = useTypewriterOutput()
+  const { ask } = useAIChat()
 
   // ── Auto-scroll ──────────────────────────────────────────────────────────
 
@@ -77,14 +79,64 @@ export function useTerminal() {
       const isEasterEgg = EASTER_TRIGGERS.has(trimmed.toLowerCase())
       const args        = trimmed.split(' ').slice(1)
 
+      if (!isEasterEgg && !cmd) {
+        // Nenhum comando reconhecido — pergunta para a IA.
+        // Mostramos um "thinking..." enquanto aguardamos a resposta do Worker.
+        dispatch(setAnimating(true))
+        setPendingEntry({ command: trimmed, visibleLines: [] })
+
+        const thinkingLines: OutputLine[] = [
+          { type: 'text', content: '  ✦ thinking...' },
+        ]
+
+        animate(
+          thinkingLines,
+          (visibleLines) => {
+            setPendingEntry((prev) => (prev ? { ...prev, visibleLines } : null))
+          },
+          async () => {
+            let aiLines: OutputLine[]
+            try {
+              const reply = await ask(trimmed)
+              // Divide a resposta por linhas para o typewriter animar cada uma
+              aiLines = reply
+                .split('\n')
+                .filter(Boolean)
+                .map((line) => ({ type: 'highlight' as const, content: `  ${line}` }))
+            } catch {
+              aiLines = [
+                { type: 'error', content: '  ✖ Could not reach AI. Is the worker running?' },
+              ]
+            }
+
+            animate(
+              aiLines,
+              (visibleLines) => {
+                setPendingEntry((prev) => (prev ? { ...prev, visibleLines } : null))
+                scrollToBottom()
+              },
+              () => {
+                const entry: TerminalEntry = {
+                  id:        `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+                  command:   trimmed,
+                  output:    aiLines,
+                  timestamp: Date.now(),
+                }
+                dispatch(addHistoryEntry(entry))
+                dispatch(setAnimating(false))
+                setPendingEntry(null)
+                scrollToBottom()
+                setTimeout(() => inputRef.current?.focus({ preventScroll: true }), 0)
+              },
+            )
+          },
+        )
+        return
+      }
+
       const outputLines: OutputLine[] = isEasterEgg
         ? getEasterEggOutput()
-        : cmd
-          ? cmd.execute(args)
-          : [
-              { type: 'error', content: `command not found: ${trimmed}` },
-              { type: 'text',  content: '  Type "help" to see available commands.' },
-            ]
+        : cmd!.execute(args)
 
       // Kick off animation
       dispatch(setAnimating(true))
@@ -112,7 +164,7 @@ export function useTerminal() {
       )
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [dispatch, cancel, animate, scrollToBottom],
+    [dispatch, cancel, animate, scrollToBottom, ask],
   )
 
   // ── Auto-run banner on first mount ───────────────────────────────────────

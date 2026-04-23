@@ -116,6 +116,10 @@ export const commands: Command[] = [
         type: "text",
         content: "  💡 Try: whoami · skills · experience · contact",
       },
+      {
+        type: "highlight",
+        content: "  ✦  Or just ask anything — e.g. \"what stack does Igor use?\"",
+      },
     ],
   },
 
