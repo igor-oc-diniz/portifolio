@@ -1,12 +1,12 @@
 # Igor Otávio Caetano Diniz — Personal Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-igor--oc--diniz.github.io-6366f1?style=for-the-badge&logo=github-pages&logoColor=white)](https://igor-oc-diniz.github.io/portifolio/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-igor--portfolio.fly.dev-6366f1?style=for-the-badge&logo=fly.io&logoColor=white)](https://igor-portfolio.fly.dev/)
 [![React](https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-7-646cff?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12-ff4154?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
-[![Deployed on GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-222?style=for-the-badge&logo=github&logoColor=white)](https://pages.github.com/)
+[![Deployed on Fly.io](https://img.shields.io/badge/Deployed-Fly.io-8b5cf6?style=for-the-badge&logo=fly.io&logoColor=white)](https://fly.io/)
 
 > A production-grade personal portfolio built with the same care and architecture I bring to the products I ship professionally.
 
@@ -14,7 +14,7 @@
 
 ## 🌐 Live
 
-**[igor-oc-diniz.github.io/portifolio](https://igor-oc-diniz.github.io/portifolio/)**
+**[igor-portfolio.fly.dev](https://igor-portfolio.fly.dev/)**
 
 ---
 
@@ -88,7 +88,7 @@ performanceSlice → FPS, render time, paint metrics
 | **State** | Redux Toolkit v2 + React-Redux v9 |
 | **Icons** | Lucide React |
 | **Utilities** | clsx, tailwind-merge |
-| **Deploy** | GitHub Pages via `gh-pages` |
+| **Deploy** | Fly.io |
 | **AI Backend** | Cloudflare Workers + Anthropic Claude API |
 
 ---
