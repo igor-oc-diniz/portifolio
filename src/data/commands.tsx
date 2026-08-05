@@ -136,13 +136,18 @@ export const commands: Command[] = [
       { type: "highlight", content: "💼  Experience:    7+ years" },
       {
         type: "highlight",
-        content: "🏢  Current role:  Senior Frontend Developer @ CI&T",
+        content:
+          "🏢  Last role:     Senior Frontend Developer @ CI&T (until May 2026)",
       },
       {
         type: "highlight",
-        content: "🚀  Venture:       Co-Founder & Mobile Engineer @ TopCaixa",
+        content:
+          "🚀  Venture:       Co-Founder & Mobile Engineer @ TopCaixa (archived)",
       },
-      { type: "highlight", content: "✅  Status:        Open to work" },
+      {
+        type: "highlight",
+        content: "✅  Status:        Open to work — available immediately",
+      },
       { type: "highlight", content: "🌐  Languages:     PT-BR · EN" },
       {
         type: "highlight",
@@ -191,7 +196,7 @@ export const commands: Command[] = [
         { type: "separator", content: SEP },
       ];
       experiences.forEach((exp, i) => {
-        const badge = exp.highlight ? "  [current]" : "";
+        const badge = exp.status ? `  [${exp.status}]` : "";
         const topMetric = exp.metrics[0];
         lines.push({
           type: "highlight",

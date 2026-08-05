@@ -51,7 +51,8 @@ Speaking: Gave a talk on React Native at Universidade Federal de Lavras (March 2
 
 Languages: Portuguese (native), English (full professional), French (elementary)
 Education: Bachelor's in Computer Science — Universidade Federal de Lavras (2014–2022)
-Status: Open to work — actively seeking remote, international (USD-compensated) senior
+Status: Open to work and available immediately — not currently employed. His last role was
+at CI&T (ended May 2026). Actively seeking remote, international (USD-compensated) senior
 frontend / mobile positions.
 
 == Compensation Expectations ==
@@ -102,7 +103,7 @@ Open to discussing full packages (equity, benefits, bonuses) for the right role.
    - 87% of accessibility issues resolved (WCAG)
    - 6 Storybook components adopted by 7 teams
 
-7. CI&T → Itaú — Senior Frontend Developer (Jun 2025 – Present) ← CURRENT
+7. CI&T → Itaú — Senior Frontend Developer (Jun 2025 – May 2026) ← MOST RECENT (ended)
    Context: Large-scale digital banking product (Brazil's largest bank)
    Stack: React, TypeScript, Datadog, WCAG, Node.js, AWS S3, Jest, Cypress
    - 95%+ unit test coverage
@@ -111,15 +112,15 @@ Open to discussing full packages (equity, benefits, bonuses) for the right role.
 
 == Side Projects ==
 
-TopCaixa — https://www.topcaixa.com.br
-Flutter app currently in production on Google Play, built for small businesses and
-microentrepreneurs (MEI / autônomos) who want to grow their business through better
-financial control. It's a digital cashbook for tracking revenue and expenses, setting
-monthly revenue goals and spending limits, viewing financial balances by period, and
-managing multiple stores separately.
+TopCaixa (2022 – 2026) — ARCHIVED, no longer maintained or distributed.
+Flutter app built for small businesses and microentrepreneurs (MEI / autônomos) who wanted
+to grow their business through better financial control. It was a digital cashbook for
+tracking revenue and expenses, setting monthly revenue goals and spending limits, viewing
+financial balances by period, and managing multiple stores separately.
 - Architecture: BLoC pattern
 - Monetization: RevenueCat integration (R$9.90/month, 3-month free trial)
-- Currently Android-only; iOS version planned
+- Was Android-only; the project was archived before an iOS release
+Do not present TopCaixa as a live product or share a download link — it is a past project.
 
 == Personal ==
 

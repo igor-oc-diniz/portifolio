@@ -20,7 +20,8 @@ export interface ExperienceEntry {
   metrics: Metric[];
   stack: string[];
   tags: FilterTag[];
-  highlight?: boolean;
+  /** Drives the timeline badge, dot glow and card emphasis. */
+  status?: "current" | "archived";
 }
 
 export type FilterTag = "All" | "Mobile" | "Frontend" | "Leadership";
@@ -37,11 +38,10 @@ export const experiences: ExperienceEntry[] = [
     company: "CI&T",
     logo: "./cit.png",
     role: "Senior Frontend Developer",
-    period: "Jun 2025 – Present",
-    duration: "8 months",
+    period: "Jun 2025 – May 2026",
+    duration: "1 year",
     location: "Remote",
     sector: "Banking · Enterprise",
-    highlight: true,
     tags: ["Frontend", "Leadership"],
     description: [
       "Allocated to Itaú, one of Brazil's largest banks, to lead the frontend foundation of a new large-scale digital banking product — defining architecture standards for accessibility, scalability, and complex user journeys in a highly regulated environment.",
@@ -76,20 +76,20 @@ export const experiences: ExperienceEntry[] = [
     company: "TopCaixa",
     logo: "./topcaixa.png",
     role: "Co-Founder & Mobile Engineer",
-    period: "2022 – Present",
-    duration: "Ongoing",
-    highlight: true,
+    period: "2022 – 2026",
+    duration: "4 years",
+    status: "archived",
     location: "Remote",
     sector: "Startup · SaaS",
     tags: ["Mobile", "Leadership"],
     description: [
-      "Co-founding member with full ownership of the mobile application — responsible for all architecture decisions, product design, and feature delivery from the ground up.\nFeel free to check-out our product available for android: www.topcaixa.com.br",
+      "Co-founding member with full ownership of the mobile application — responsible for all architecture decisions, product design, and feature delivery from the ground up.\nThe project has been archived — the app is no longer maintained or distributed.",
     ],
     activities: [
       "Built the entire mobile application from scratch, including architecture, navigation, and UI",
       "Sole responsible for all frontend product decisions and continuous delivery",
       "Managed the deployment into the Google Play Store",
-      "Responsible for the entire product road map",
+      "Owned the entire product road map until the project was archived",
     ],
     metrics: [
       { label: "Active users", value: "83.3%", icon: "Users" },
