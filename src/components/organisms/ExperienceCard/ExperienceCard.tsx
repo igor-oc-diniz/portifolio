@@ -52,7 +52,7 @@ export function ExperienceCard({ entry, index }: ExperienceCardProps) {
     <motion.div layout className="relative">
       {/* Timeline dot — absolutely positioned to align with the left connector */}
       <div className="absolute -left-[33px] top-[22px] z-10">
-        <TimelineDot active={isOpen} highlight={entry.highlight} />
+        <TimelineDot active={isOpen} highlight={entry.status === "current"} />
       </div>
 
       {/* Scroll-triggered entrance */}
@@ -66,7 +66,7 @@ export function ExperienceCard({ entry, index }: ExperienceCardProps) {
         <div
           className={cn(
             "rounded-xl border backdrop-blur-sm bg-bg-elevated/50 overflow-hidden",
-            entry.highlight || isRecruiterActive
+            entry.status === "current" || isRecruiterActive
               ? isRecruiterActive
                 ? "border-accent-primary/60 shadow-lg shadow-accent-primary/15"
                 : "border-accent-primary/40 shadow-lg shadow-accent-primary/10"

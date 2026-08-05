@@ -221,11 +221,11 @@ The worker source lives in the [`worker/`](worker/) directory.
 
 Senior Frontend & Mobile Engineer with 7+ years delivering production-grade applications across banking, healthcare, and B2B sectors.
 
-- 🏦 Currently at **CI&T** → allocated to **Itaú** (largest bank in Brazil)
+- 🏦 Most recently at **CI&T** → allocated to **Itaú** (largest bank in Brazil), until May 2026
 - 📱 Previous: **Encora** → Velocity Global (SaaS) & Mindbloom (mental health)
 - 🧑‍💻 Led a B2B offline-first mobile app that generated **BRL 2.7M revenue in its first month**
 - ♿ Achieved **100% WCAG compliance** across 12 interfaces at Itaú
-- 📍 Based in Brazil — open to remote opportunities globally
+- 📍 Based in Brazil — **open to work**, available immediately for remote roles globally
 
 **[linkedin.com/in/igorotavio96](https://linkedin.com/in/igorotavio96)**
 

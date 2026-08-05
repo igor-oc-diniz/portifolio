@@ -49,9 +49,14 @@ export function ExperienceHeader({
           </div>
 
           <div className="flex items-center gap-2 shrink-0 pt-0.5">
-            {entry.highlight && (
+            {entry.status === "current" && (
               <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
                 Current
+              </span>
+            )}
+            {entry.status === "archived" && (
+              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-text-secondary/10 text-text-secondary border border-text-secondary/20 whitespace-nowrap">
+                Archived
               </span>
             )}
             <motion.div
